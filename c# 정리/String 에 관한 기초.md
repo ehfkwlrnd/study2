@@ -52,4 +52,25 @@
   string s = @"""Hi"""; //"Hi" 로 표현됨 (일반적으로 string s = "\"Hi\"";)
   ```
 
+* 문자열 보간
+
+  ```c#
+  // $을 사용하여 문자열 리터럴을 보간된 문자열로 식별함
+  
+  string name = "Mark";
+  var date = DateTime.Now;
+  
+  // 기존 방법
+  Console.WriteLine("Hello, {0}! Today is {1}, it's {2:HH:mm} now.", name, date.DayOfWeek, date);
+  
+  // $을 사용하여 같은 결과
+  Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
+  
+  // 기존 방법
+  string introduce = "My name is " + name;
+  
+  // $을 사용하여 같은 결과
+  string introduce = $"My name is {name}";
+  ```
+
   
