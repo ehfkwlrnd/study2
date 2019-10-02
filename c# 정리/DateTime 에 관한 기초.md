@@ -3,6 +3,9 @@
 * 초기화
 
   ```c#
+  //DateTime은 not nullable이다.
+  //DateTime d = null; 불가능
+  
   DateTime d = new DateTime();
   //d : 0001-01-01 오전 12:00:00
   
