@@ -24,14 +24,14 @@
   routes.MapRoute(
   	name: "Default",
   	url: "{controller}/{action}/{id}",
-  	defaults: new { controller = "Home", action = "Index", id = 			UrlParameter.Optional }
+  	defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
   );
   
   /* 만약 다음과 같이 변형하면 /Index/Home 으로 호출할 수 있다. */
   routes.MapRoute(
   	name: "Default",
   	url: "{action}/{controller}/{id}",
-  	defaults: new { controller = "Home", action = "Index", id = 			UrlParameter.Optional }
+  	defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
   );
   ```
 
