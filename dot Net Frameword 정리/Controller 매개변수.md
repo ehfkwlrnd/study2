@@ -49,12 +49,9 @@
   // url이 /Home/Index/?select.Value= 일 때 select.Value = 0
   // url이 /Home/Index/?select.Value=1 일 때 select.Value = 1
   
-public ActionResult Index(Guid? select){}
+  public ActionResult Index(Guid? select){}
   // url이 /Home/Index/?select= 일 때 select = null
   // url이 /Home/Index/?select=0000 일 때 select = null
   // url이 /Home/Index/?select=00000000-0000-0000-0000-000000000000 일 때 select.Value = 00000000-0000-0000-0000-000000000000
   // Guid 는 8자리-4자리-4자리-4자리-12자리 (총 32자리)
-  
   ```
-  
-  
