@@ -67,4 +67,60 @@
   *@
   ```
 
+* @Html.Raw
+
+  ```html
+  <!--Test.cshtml-->
+  @("<div>Normal String</div>")
+@{
+  	<div>This is Razor</div>
+  }
+  @Html.Raw("<div>Html String</div>")
+  
+  <!--클라이언트가 받는 페이지-->
+  "<div>Normal String</div>" <!--그냥 텍스트-->
+  <div>Html String</div> <!--div 태그-->
+  <div>Html String</div> <!--div 태그-->
+  ```
+  
+* @using
+
+  ```html
+  <!--다음과 같이 하면 using이 되지 않는다.-->
+  @{
+  	using System.Text.RegularExpressions;
+  }
+  
+  <!--다음과 같이 using을 사용해야 한다.-->
+  @using System.Text.RegularExpressions;
+  ```
+
+* @functions
+
+  ```c#
+  /*함수를 추가하고 싶다면*/
+  /*Test.cshtml*/
+  
+  @functions{
+  	public string getString()
+  	{
+  		return "Hello World";
+  	}
+  
+  	public void RenderName(string name)
+      {
+          <div>Name : @name</div>
+      }
+  }
+  
+  <div>@getString()</div>
+  @RenderName("Hail")
+  
+  /*클라이언트가 받는 페이지*/
+  <div>Hello World</div>
+  <div>Name : Hail</div>
+  ```
+
+  
+
   
