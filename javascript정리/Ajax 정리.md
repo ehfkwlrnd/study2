@@ -51,7 +51,7 @@ $.getScript("https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
            function(data, textStatus, jqXHR){
     			console.log('jquery load');
 			});
-//아래와 같은 내용
+//아래의 코드도 같은 동작을 함
 $.ajax({
     url : url,
     dataType : 'script',
