@@ -34,7 +34,7 @@
   $(f).serialize();
   //name=hail&check=1&check=2
   //파일은 serialize할 수 없음
-```
+  ```
   
 * FormData
 
