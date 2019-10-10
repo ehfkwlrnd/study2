@@ -58,7 +58,8 @@
   var c = b.files; // FileList
   var d = c[0]; // File
   
+  //FormData객체를 이용하여 넘기는 것이 좋다.
   formdata.append('files', d);
-  ```
-
+```
+  
   
