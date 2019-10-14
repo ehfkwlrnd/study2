@@ -7,10 +7,10 @@
   //DateTime d = null; 불가능
   
   DateTime d = new DateTime();
-  //d : 0001-01-01 오전 12:00:00
+  //0001-01-01 오전 12:00:00
   
   DateTime d = new DateTime(2019, 12, 25, 13, 10, 15);
-  //d : 2019-12-25 오후 1:10:15
+  //2019-12-25 오후 1:10:15
   ```
 
 * 시간 이동
@@ -32,13 +32,13 @@
 
   ```c#
   d.ToShortDateString();
-  //return "2019-12-25"
+  //"2019-12-25"
   
   d.ToShortTimeString();
-  //return "오후 1:10"
+  //"오후 1:10"
   
   d.ToLongTimeString();
-  //return "오후 1:10:15"
+  //"오후 1:10:15"
   
   d.ToString(format);
   /*
