@@ -9,7 +9,7 @@
 * Controller
 
   ```c#
-  public FileResult FileDownload(string url, string name)
+  public ActionResult FileDownload(string url, string name)
   {
       url = Server.MapPath("~/Upload/" + url.Substring(url.LastIndexOf('/') + 1));
       //Server는 Controller의 속성
