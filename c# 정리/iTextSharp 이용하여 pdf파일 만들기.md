@@ -65,7 +65,7 @@
   document.Close();
   ```
   
-* 웹 상에서 Pdf전송할 경우
+* .NET에서 Pdf전송할 경우
 
   ```c#
   public ActionResult PdfDownload()
