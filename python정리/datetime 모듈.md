@@ -16,7 +16,14 @@
 	  
 	  datetime.today() # datetime 객체
 	  ```
-
+	* now() 메소드
+	  ```python
+	  from datetime import datetime
+	  
+	  #datetime.now(tz=None)
+	  datetime.now() # datetime 객체
+	  #today 메소드와 기본적으로 같지만 tz인수로 좀 더 정확한 시간 제공
+	  ```
 	* strptime() 메소드
 
 	  ```python
