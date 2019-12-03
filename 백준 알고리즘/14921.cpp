@@ -21,10 +21,3 @@ int main()
 	if(s < N-1)if(abs(min) > abs(A[s]+A[s+1]))min = A[s]+A[s+1];
 	printf("%d", min);
 }
-
-
-
-
-
-
-
