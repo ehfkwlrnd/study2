@@ -15,29 +15,14 @@ int main()
 	for(int i = 0; i < M; i++){
 		for(int j = 0; j < N; j++){
 			if(B[i][j] == 0){
-				bool allzero = true;
-				for(int u = i; i <= i+max; i++){
-					for(int v = j; j <= j+max; j++){
-						if(u >= M || v >= N || B[u][v] != 0){
-							allzero = false;
-						}
+				int v = 0;
+				for(;j+v < N && B[i][j+v] == 0; v++);
+				int u = 0;
+				for(;u < M && B[u][v] != 0; u++){
+					for(v = j;v < N && B[u][v] != 0, v++){
+						
 					}
 				}
-				while(allzero){
-					max++;
-					if(i+max >= M || j+max >= N){
-						allzero = false;
-					}
-					else{
-						for(int k = 0; k <= i+max; k++){
-							if(B[k][j+max] != 0 || B[i+max][k] != 0){
-								allzero = false;
-							}
-						}
-					}
-					
-				}
-				max--;
 			}
 		}
 	}

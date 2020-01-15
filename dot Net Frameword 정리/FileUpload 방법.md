@@ -14,7 +14,7 @@
   $.ajax({
   	type: "post",
   	url: "/Home/FileUpload",
-  	data: new FormData("f"),
+  	data: new FormData(f),
   	processData: false, 
   	contentType: false,  
   	success: function (json) {
