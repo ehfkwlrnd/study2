@@ -8,10 +8,6 @@ int main()
 	string orders;
 	cin >> orders;
 	for(int i = 0; i < orders.length(); i++){
-		
-//		for(int i = 0; i < 4; i++) cout << cups[i] << ' ';
-//		cout << endl;
-		
 		char order = orders[i];
 		int s, e;
 		switch(order){
@@ -44,10 +40,6 @@ int main()
 		cups[s] = cups[e];
 		cups[e] = temp;
 	}
-	
-//	for(int i = 0; i < 4; i++) cout << cups[i] << ' ';
-//	cout << endl;
-//	
 	int small, big;
 	for(int i = 0; i < 4; i++){
 		if(cups[i] == 1) small = i+1;
