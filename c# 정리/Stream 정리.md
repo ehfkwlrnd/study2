@@ -76,6 +76,19 @@
   string content = ReadAllText(path, Encoding.Default);
   ```
 
+* Stream을 파일로 저장하는 쉬운 방법
+
+  ```c#
+  //아래의 result를 파일로 저장하는 것이 목적
+  var client = new HttpClient();
+  var result = client.GetAsync(url).Result.Content.ReadAsStreamAsync();
+  
+  //저장하는 코드
+  var ms = new MemoryStream();
+  result.CopyTo(ms);
+  File.WriteAllBytes(path, ms.ToArray());
+  ```
+
   
 
 
