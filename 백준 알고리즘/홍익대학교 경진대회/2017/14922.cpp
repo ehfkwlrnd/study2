@@ -1,35 +1,65 @@
 #include <iostream>
 using namespace std;
 
-
+int N;
+int A[1000000];
+double Min = 700000000;
+int Index = 0;
 
 int main()
 {
-	int N;
-	scanf("%d", &N);
-	unsigned int A[N];
-	for(int i = 0; i < N; i++)scanf("%u", &A[i]);
-	double min = 700000000;
-	int min_index = 0;
-	double sum;
+	cin >> N;
+	for(int i = 0; i < N; i++) cin >> A[i];
+	for(int i = 0; i < N-1; i++) {
+		double Avg = (A[i] + A[i+1])/2;
+		if(Avg < Min){
+			Min = Avg;
+			Index = i;
+		}
+	}
 	for(int i = 0; i < N-2; i++){
-		sum = (double)A[i];
-		sum += (double)A[i+1];
-		if(min > sum/2){
-			min = sum/2;
-			min_index = i;
-		}
-		sum += (double)A[i+2];
-		if(min > sum/3){
-			min = sum/3;
-			min_index = i;
+		double Avg = (A[i] + A[i+1] + A[i+2])/3;
+		if(Avg < Min){
+			Min = Avg;
+			Index = i;
 		}
 	}
-	sum = (double)A[N-2];
-	sum += (double)A[N-1];
-	if(min > sum/2){
-		min = sum/2;
-		min_index = N-2;
-	}
-	printf("%d", min_index);
+	cout << Index;
 }
+
+//풀이
+/*
+논리 :  
+A(i, j)는 문제에서 정의된 부분평균 이다. 
+문제 해결을 위한 가장 간단한 아이디어로 모든 i, j에 대해 A(i, j)를 계산하고
+그 중 가장 작은 A(i, j)를 찾는 방법이 있다.
+하지만 이 방법은 시간복잡도는 O(n^2)이며, 시간초과에러를 만나게 된다.
+
+몇 개의 예시를 계산해본 결과 다음과 같은 통찰에 달할 수 있었다. 
+claim : 임의의 배열 A에 대해, 어떤 u, v가 존재하여 |u-v| <= 3 이고, 
+		임의의 i, j에 대해 A(u,v) <= A(i, j) 이다. 
+		
+즉, 최소가 되는 부분평균을 찾기 위해선 2개 또는 3개만 조사해도 충분하다는 것이다.
+그렇다면 정말 그러한지 증명해보도록 해보자.
+
+proof : A의 원소를 a1, a2, ..., an 이라 하자. 그리고 A의 평균이 m 이라 하자.  
+그렇다면 각 ai = m + bi 로 표현 할 수 있다. 
+또한 b1 + b2 + ... + bn = 0 이다. 
+A(1, n-2) = m + (b1 + ... + bn-2)/(n-2) 이고, 
+A(n-1, n) = m + (bn-1 + bn)/2 이다.
+
+따라서 A(1, n-2)가 평균보다 크다면 A(n-1, n)이 평균보다 작으며,
+A(n-1, n)이 평균보다 크다면 A(1, n-2)가 평균보다 작음을 알 수 있다.
+
+이와 같은 논리를 통해, 만약 A(1, 2) 또는 A(n-1, n)이 최소부분평균이라면 위의 주장이 참이다.
+만약 A(1, n-2)과 A(3, n)이 평균보다 더 작다면 이 부분집합에 대해 다시 재귀적으로 검사할 수 있다.
+이를 계속 반복하여 해당 부분집합의 크기가 3이 된다면,
+즉, A의 부분집합 C = {c1, c2, c3} = {ai, ai+1, ai+2} 라 하자.
+이렇게 되면 C(1, 2), C(3, 3)과 같이 구분할 수 없다. 왜냐하면 A(3, 3)과 같은 부분평균은 정의되지 않기 때문이다.
+특히 C(1, 2), C(2, 3)이 C(1, 3)보다 작거나 같다는 보장도 할 수 없다. (ex : C = {1, 100, 2}) 
+따라서 C(1, 2), C(2, 3), C(1, 3) 에 대해 검사를 하면 된다. 
+이로써 증명이 완료된다.  
+
+위와 같이 2개 또는 3개에 대해서만 부분평균의 최소를 찾게 되면 
+시간복잡도는 O(n)이 되므로 무사히 통과할 수 있다.  
+*/ 

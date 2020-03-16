@@ -1,30 +1,39 @@
 #include <iostream>
 using namespace std;
 
+int N, M;
+int A[1000][1000];
+int Max = -1;
+
 int main()
 {
-	int M, N;
-	scanf("%d %d", &M, &N);
-	int B[M][N];
-	for(int i = 0; i < M; i++){
-		for(int j = 0; j < N; j++){
-			scanf("%d", &B[i][j]);
+	cin >> N >> M;
+	for(int i = 0; i < N; i++){
+		for(int j = 0; j < M; j++){
+			cin >> A[i][j];
 		}
 	}
-	int max = 0;
-	for(int i = 0; i < M; i++){
-		for(int j = 0; j < N; j++){
-			if(B[i][j] == 0){
-				int v = 0;
-				for(;j+v < N && B[i][j+v] == 0; v++);
-				int u = 0;
-				for(;u < M && B[u][v] != 0; u++){
-					for(v = j;v < N && B[u][v] != 0, v++){
-						
+	for(int i = 0; i < N; i++){
+		for(int j = 0; j < M; j++){
+			for(int k = 0; i+k < N && j+k < M; k++){
+				bool allzero = true;
+				for(int l = 0; l <= k; l++){
+					if(A[i+k][j+l] != 0 || A[i+l][j+k] != 0) {
+						allzero = false;
+						break;	
 					}
 				}
+				if(!allzero) break;
+				else if(k > Max) Max = k;
 			}
 		}
 	}
-	printf("%d", max);
+	cout << Max+1;
 }
+
+//풀이
+/*
+논리 : 
+각각의 위치에서 최대 크기를 찾으면 된다. 
+시간 복잡도는 O((NM)^2) 
+*/ 

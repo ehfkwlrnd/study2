@@ -4,6 +4,6 @@ using namespace std;
 int main()
 {
 	int S, T, D;
-	scanf("%d %d %d", &S, &T, &D);
-	printf("%d", T*(D/(2*S)));
+	cin >> S >> T >> D;
+	cout << T*(D/(2*S));
 }
