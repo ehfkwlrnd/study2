@@ -64,8 +64,9 @@
   <configuration>
   	<system.web>
       	<httpRuntime maxRequestLength="2097152"
-                       targetFramework="4.6.1" />
+                       targetFramework="4.6.1" executionTimeout="360"/>
           <!-- maxRequestLength(KB) 기본 크기는 4096KB(4MB)-->
+          <!-- executionTimeout 단위는 second -->
       </system.web>
       <system.webServer>
       	<security>
@@ -76,6 +77,6 @@
           </security>
       </system.webServer>
   </configuration>
-  ```
-
+```
+  
   
