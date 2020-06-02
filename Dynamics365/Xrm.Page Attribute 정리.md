@@ -26,6 +26,12 @@
     [{entityType: "account", id: "{D0F05A0E-9F43-E411-ADE7-D89D6779D5EC}", name: "서울아산병원"}]
     ```
   
+    또한 optionset필드의 경우 getText메소드를 제공한다.
+  
+    ```javascript
+    var text = Xrm.Page.getAttribute('{field_name}').getText();
+    ```
+  
   * setValue
   
     각 타입에 맞춰 인자값을 넘겨주면 되지만, 특히 lookup필드는 고유 형식이 있으므로 주의해야 한다.

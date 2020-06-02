@@ -47,5 +47,20 @@ var row = rows._collection['3fbd2b70-6bcb-e711-813d-e0071b673bc1'];
   var length = rows.getLength();
   ```
   
-  
+* v-Object (row)
 
+  ```javascript
+  var attributes = row.getAttribute(); //object 배열
+  var url = row.getUrl();
+  ```
+
+* Attribute
+
+  ```javascript
+  var attribute = attributes[0];
+  
+  var attribute_name = attribute._attributeName;//ex) skr_product_status
+  var value = attribute.getValue();
+  ```
+
+  
