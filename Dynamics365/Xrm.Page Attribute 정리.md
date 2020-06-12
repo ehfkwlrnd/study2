@@ -70,5 +70,3 @@
   Xrm.Page.getAttribute('{field_name}').setRequiredLevel('required');
   ```
 
-  
-

@@ -40,18 +40,19 @@ var row = rows._collection['3fbd2b70-6bcb-e711-813d-e0071b673bc1'];
   아래와 같이 각 레코드에 간편히 접근할 수 있는 메소들를 제공한다.
   
   ```javascript
-  var rows_all = rows.getAll(); //v오브젝트 배열 [v, v, ... , v]
-  var rows_filtering = rows.getByFilter(x = > x._entityId.guid == guid); //v오브젝트 배열
-  var row_index = rows.getByIndex(2); //v오브젝트
-  var row_name = rows.getByName('3fbd2b70-6bcb-e711-813d-e0071b673bc1'); //v오브젝트
+  var rows_all = rows.getAll(); //row오브젝트 배열
+  var rows_filtering = rows.getByFilter(x = > x._entityId.guid == guid);//row오브젝트 배열
+  var row_index = rows.getByIndex(2); //row오브젝트
+  var row_name = rows.getByName('3fbd2b70-6bcb-e711-813d-e0071b673bc1'); //row오브젝트
   var length = rows.getLength();
   ```
   
-* v-Object (row)
+* row
 
   ```javascript
   var attributes = row.getAttribute(); //object 배열
   var url = row.getUrl();
+  var guid = row._entityId.guid;
   ```
 
 * Attribute
