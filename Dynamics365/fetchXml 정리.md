@@ -292,5 +292,25 @@
     </fetch>
     ```
 
+  * 필터링 복합 논리
+  
+    ```xml
+    <fetch>
+    	<entity name='contact'>
+            <attribute name='fullname'/>
+            <filter type='and'>
+            	<filter type='or'>
+                    <condition />
+                    <condition />
+                </filter>
+                <filter type='or'>
+                    <condition />
+                    <condition />
+                </filter>
+            </filter>
+        </entity>
+    </fetch>
+    ```
+  
     
 
