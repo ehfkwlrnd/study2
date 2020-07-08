@@ -25,6 +25,15 @@
     </fetch>
     ```
 
+  * page
+
+    count별로 페이징을 할 수 있다. (1부터 시작)
+
+    ```xml
+    <fetch count='10' page='1'>
+    </fetch>
+    ```
+
   * distinct
 
     aggregate를 사용하지 않을 경우, fetch되는 attribute의 중복을 제거한다.
