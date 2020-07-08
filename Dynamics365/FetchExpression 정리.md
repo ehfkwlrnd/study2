@@ -1,4 +1,4 @@
-# FetchExpression (C#) 정리
+# FetchExpression 정리
 
 * 해당 예제에서 필요한 클래스를 사용하기 아래와 같이 using선언을 해준다.
 
