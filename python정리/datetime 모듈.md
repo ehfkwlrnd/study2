@@ -31,6 +31,9 @@
 	  
 	  #문자열을 객체로
 	  datetime.strptime('2019-11-07', '%Y-%m-%d') # datetime 객체
+	  
+	  #자세히
+	  datetime.strptime('2020-11-11 13:03:25.321', '%Y-%m-%d %H:%M:%S.%f')
 	  ```
 
 	* strftime() 메소드
